@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { Container, Row, Col, Form } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import FavouritesIcon from './FavouritesIcon'
 import Job from './Job'
 
 const MainSearch = () => {
@@ -31,8 +33,13 @@ const MainSearch = () => {
   return (
     <Container>
       <Row>
-        <Col xs={10} className="mx-auto my-3">
+        <Col xs={8} className="mx-auto my-3 text-center">
           <h1>Remote Jobs Search</h1>
+        </Col>
+        <Col xs={2} className='d-flex align-items-center'>
+          <Link to='/favourites' className='text-dark'>
+            <FavouritesIcon />
+          </Link>
         </Col>
         <Col xs={10} className="mx-auto">
           <Form onSubmit={handleSubmit}>
